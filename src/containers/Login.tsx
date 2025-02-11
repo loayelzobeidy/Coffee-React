@@ -20,7 +20,6 @@ export default function LoginComponent() {
   const onSubmit: SubmitHandler<LoginInputs> = (data) => {
     dispatch(login({ email: data.email, name: data.email }));
     const response = loginMut.mutate(data);
-    console.log("query object ", response);
   };
 
   return (

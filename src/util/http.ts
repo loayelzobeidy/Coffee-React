@@ -14,7 +14,6 @@ export async function loginFun(loginData: {
     .then((response) =>
       response.json().then((data) => {
         addJwtToLocalStorage(data.accessToken);
-        console.log(data);
       })
     )
     .catch(() => {

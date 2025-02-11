@@ -4,6 +4,5 @@ import Cart from "../components/ui/Cart";
 
 export default function CartView() {
   const cart = useSelector((state: RootState) => state.cart);
-  console.log("cart ", cart);
   return <Cart></Cart>;
 }

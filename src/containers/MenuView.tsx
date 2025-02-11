@@ -69,6 +69,5 @@ const COFFEE_LIST = [
 ];
 export default function MenuView() {
   const user = useSelector((state: RootState) => state.user.user);
-  console.log("user and isAuthenticated", user);
   return <Menu items={COFFEE_LIST}></Menu>;
 }
