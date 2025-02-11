@@ -1,14 +1,5 @@
-import MenuItem from "./MenuItem"; // Assuming MenuItem is in a separate file
-
-interface MenuItemProps {
-  name: string;
-  description?: string; // Description is optional
-  imageUrl?: string; // Image URL is optional
-}
-
-interface MenuList {
-  items: MenuItemProps[];
-}
+import MenuItem from "./MenuItem";
+import { MenuList } from "../../types/MenuList";
 
 export default function Menu(menuList: MenuList) {
   return (
@@ -19,6 +10,7 @@ export default function Menu(menuList: MenuList) {
             <MenuItem
               name={item.name}
               description={item.description}
+              price={item.price}
               imageUrl={item.imageUrl}
             />
           </li>

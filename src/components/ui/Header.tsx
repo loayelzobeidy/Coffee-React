@@ -30,6 +30,9 @@ export default function Header() {
           <NavLink link="/menu">Menu</NavLink>
         </li>
         <li>
+          <NavLink link="/cart">Cart</NavLink>
+        </li> 
+        <li>
           <NavLink link="/addtomenu">Add Element To Menu</NavLink>
         </li>
       </ul>

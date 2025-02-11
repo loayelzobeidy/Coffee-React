@@ -3,7 +3,6 @@ export function addJwtToLocalStorage(token: string, key: string = "jwt"): void {
     localStorage.setItem(key, token);
   } catch (error) {
     console.error("Error storing JWT in localStorage:", error);
-    // Consider handling the error appropriately, e.g., showing a message to the user.
   }
 }
 
@@ -13,7 +12,7 @@ export function getJwtFromLocalStorage(key: string = "jwt"): string | null {
     return token;
   } catch (error) {
     console.error("Error retrieving JWT from localStorage:", error);
-    return null; // Or throw the error if you prefer
+    return null;
   }
 }
 

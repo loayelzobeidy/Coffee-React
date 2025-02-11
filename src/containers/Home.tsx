@@ -18,8 +18,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-800 leading-tight mb-6">
             We serve the richest coffee in the city!
           </h1>
-          <Button
-            clicked={orderNow}          >
+          <Button className="" clicked={orderNow}>
             Order now
           </Button>
         </div>

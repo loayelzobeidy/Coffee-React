@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
+import { ButtonProps } from "../../types/ButtonProps";
 
-interface ButtonProps {
-  children: ReactNode;
-  className:string;
-  clicked: () => void;
-}
 export default function Button({ children, className,clicked }: ButtonProps) {
   return (
     <button

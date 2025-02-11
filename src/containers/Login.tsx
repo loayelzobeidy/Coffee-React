@@ -1,11 +1,7 @@
-import { loginFun } from "../api/http";
-import { useMutation } from "@tanstack/react-query";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
-
 import { login } from "../store/userSlice";
 import { useDispatch } from "react-redux";
+import { useLogin } from "../api/hooks/useLogin";
 
 type LoginInputs = {
   email: string;
@@ -13,18 +9,9 @@ type LoginInputs = {
 };
 
 export default function LoginComponent() {
-  const user = useSelector((state: RootState) => state.user.user);
-  // const isAuthenticated = useSelector(
-  //   (state: RootState) => state.user.isAuthenticated
-  // );
-  console.log("user ", user);
   const dispatch = useDispatch();
-  const mutation = useMutation({
-    mutationFn: (data: {
-      email: string | undefined;
-      password: string | undefined;
-    }) => loginFun(data),
-  });
+  const loginMut = useLogin();
+
   const {
     register,
     handleSubmit,
@@ -32,7 +19,7 @@ export default function LoginComponent() {
   } = useForm<LoginInputs>();
   const onSubmit: SubmitHandler<LoginInputs> = (data) => {
     dispatch(login({ email: data.email, name: data.email }));
-    const response = mutation.mutate(data);
+    const response = loginMut.mutate(data);
     console.log("query object ", response);
   };
 
