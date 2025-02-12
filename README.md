@@ -17,7 +17,7 @@ This repository contains the front-end code for a coffee ordering application.  
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/loayelzobeidy/coffee-react.git`
-2. Navigate to the project directory: `cd coffee-react`
+2. Navigate to the project directory: `cd coffee-reac t`
 3. Install dependencies: `npm install` 
 4. Configure API URL:  Update the API base URL in the application configuration file (e.g., `config.js` or `.env` file).  This should point to your back-end API endpoint.
 5. Run the development server: `npm start` (or `yarn start`)
