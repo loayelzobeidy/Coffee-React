@@ -1,10 +1,17 @@
+import { useSelector } from "react-redux";
 import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "../store";
 
 export default function Home() {
   const navigate = useNavigate();
+  const user = useSelector((state:RootState) => state.user);
+  const isAuthenticated = user.isAuthenticated
   const orderNow = () => {
+    if(isAuthenticated)
     navigate("/menu");
+  else
+  navigate("login")
   };
   return (
     <div className="lower-header bg-gray-100 py-12 px-6 md:px-12 lg:px-24">
@@ -18,7 +25,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-800 leading-tight mb-6">
             We serve the richest coffee in the city!
           </h1>
-          <Button className="" clicked={orderNow}>
+          <Button className="" clicked={orderNow} >
             Order now
           </Button>
         </div>

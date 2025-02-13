@@ -44,12 +44,17 @@ export default function AddItemToMenu() {
         <input
           type="text"
           id="description"
-          {...register("description", { required: true })}
+          {...register("description", { required: true,pattern: /^[A-Za-z]+$/i } )}
           className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        {errors.description && (
+        {errors.description?.type === 'required'&& (
           <span className="text-red-500 text-sm mt-1">
             This field is required
+          </span>
+        )}
+          {errors.description?.type === 'pattern'&& (
+          <span className="text-red-500 text-sm mt-1">
+            Description input should  be a text
           </span>
         )}
       </div>
@@ -62,7 +67,7 @@ export default function AddItemToMenu() {
           Image Url
         </label>
         <input
-          type="text"
+          type="file"
           id="imageUrl"
           {...register("imageUrl", { required: true })}
           className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"

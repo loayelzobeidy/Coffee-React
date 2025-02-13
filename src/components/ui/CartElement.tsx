@@ -6,7 +6,7 @@ export default function CartElement({
   price,
 }: CartElementProps) {
   return (
-    <div className="p-4 border rounded-lg shadow-md flex flex-col items-center">
+    <div className="p-4 border rounded-lg shadow-md flex flex-col w-1/3 h-fit m-auto items-center">
       <h1 className="text-2xl font-bold mb-2">{name}</h1>
       <img
         src={imageUrl}
